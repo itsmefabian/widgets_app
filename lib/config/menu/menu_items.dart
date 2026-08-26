@@ -39,11 +39,17 @@ const appMenuItems = <MenuItem>[
     link: '/snackbar',
     icon: Icons.info_outline,
   ),
-    MenuItem(
+  MenuItem(
     title: 'Animated container',
     subTitle: 'Stateful widget',
     link: '/animated',
     icon: Icons.check_box_outlined,
+  ),
+  MenuItem(
+    title: 'UI controls + title',
+    subTitle: 'Flutter controls',
+    link: '/ui-controls',
+    icon: Icons.car_rental_outlined,
   ),
   //MenuItem(title: '', subTitle: '', link: '', icon: Icons.),
 ];
