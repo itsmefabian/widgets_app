@@ -15,7 +15,6 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
   final List<int> imageId = [1, 2, 3, 4, 5];
   final ScrollController scrollController = ScrollController();
   bool isLoading = false;
-  bool isMounted = true;
 
   @override
   void initState() {
@@ -31,23 +30,19 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
   @override
   void dispose() {
     scrollController.dispose();
-    isMounted = false;
     super.dispose();
   }
 
   Future loadNextPage() async {
     if (isLoading) return;
 
-    isLoading = true;
-
-    setState(() {});
+    setState(() => isLoading = true);
 
     await Future.delayed(const Duration(seconds: 2));
 
     addImages();
-    isLoading = false;
-    if (!isMounted) return;
-    setState(() {});
+    if (!mounted) return;
+    setState(() => isLoading = false);
     moveScrollToBottom();
   }
 
@@ -57,18 +52,17 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
   }
 
   Future onRefresh() async {
-    isLoading = true;
+    setState(() => isLoading = true);
 
-    await Future.delayed(Duration(seconds: 3));
-    if (!isMounted) return;
+    await Future.delayed(const Duration(seconds: 3));
+    if (!mounted) return;
 
     final lastId = imageId.last;
-    isLoading = false;
     imageId.clear();
 
     imageId.add(lastId + 1);
     addImages();
-    setState(() {});
+    setState(() => isLoading = false);
   }
 
   void moveScrollToBottom() {
