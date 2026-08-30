@@ -8,3 +8,7 @@ export 'package:widgets_app/config/presentation/screen/infinite_scroll/infinite_
 export 'package:widgets_app/config/presentation/screen/progress/progress_screen.dart';
 export 'package:widgets_app/config/presentation/screen/snackbar/snackbar_screen.dart';
 export 'package:widgets_app/config/presentation/screen/ui_controls/ui_controls_screen.dart';
+
+export 'package:widgets_app/config/presentation/screen/counter/counter_screen.dart';
+
+export 'package:widgets_app/config/presentation/screen/theme_changer/theme_changer_screen.dart';

@@ -16,6 +16,12 @@ class MenuItem {
 
 const appMenuItems = <MenuItem>[
   MenuItem(
+    title: 'Counter riverpod',
+    subTitle: 'Counter screen',
+    link: '/counter',
+    icon: Icons.add,
+  ),
+  MenuItem(
     title: 'Button',
     subTitle: 'Flutter buttons',
     link: '/buttons',
@@ -58,10 +64,15 @@ const appMenuItems = <MenuItem>[
     icon: Icons.accessible_rounded,
   ),
   MenuItem(
-    title: 'Infinite scroll',
+    title: 'Infinite scroll screen',
     subTitle: 'Infinite scroll and pull to refresh',
     link: '/infinite',
     icon: Icons.list_alt_rounded,
   ),
-  //MenuItem(title: '', subTitle: '', link: '', icon: Icons.),
+  MenuItem(
+    title: 'Theme screen',
+    subTitle: 'Toggle theme',
+    link: '/theme-changer',
+    icon: Icons.color_lens_outlined,
+  ),
 ];
